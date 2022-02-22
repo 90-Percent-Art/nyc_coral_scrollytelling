@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nyc_coral_scrollytelling/static/css/main.6c423543.css",
+    "main.js": "/nyc_coral_scrollytelling/static/js/main.e1795ac6.js",
+    "index.html": "/nyc_coral_scrollytelling/index.html",
+    "main.6c423543.css.map": "/nyc_coral_scrollytelling/static/css/main.6c423543.css.map",
+    "main.e1795ac6.js.map": "/nyc_coral_scrollytelling/static/js/main.e1795ac6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c423543.css",
+    "static/js/main.e1795ac6.js"
+  ]
+}

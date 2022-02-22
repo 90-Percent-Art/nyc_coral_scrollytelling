@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/nyc_coral_scrollytelling/static/css/main.6c423543.css",
-    "main.js": "/nyc_coral_scrollytelling/static/js/main.e1795ac6.js",
+    "main.css": "/nyc_coral_scrollytelling/static/css/main.4538d221.css",
+    "main.js": "/nyc_coral_scrollytelling/static/js/main.d1184ec4.js",
+    "static/js/483.d50d8038.chunk.js": "/nyc_coral_scrollytelling/static/js/483.d50d8038.chunk.js",
     "index.html": "/nyc_coral_scrollytelling/index.html",
-    "main.6c423543.css.map": "/nyc_coral_scrollytelling/static/css/main.6c423543.css.map",
-    "main.e1795ac6.js.map": "/nyc_coral_scrollytelling/static/js/main.e1795ac6.js.map"
+    "main.4538d221.css.map": "/nyc_coral_scrollytelling/static/css/main.4538d221.css.map",
+    "main.d1184ec4.js.map": "/nyc_coral_scrollytelling/static/js/main.d1184ec4.js.map",
+    "483.d50d8038.chunk.js.map": "/nyc_coral_scrollytelling/static/js/483.d50d8038.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c423543.css",
-    "static/js/main.e1795ac6.js"
+    "static/css/main.4538d221.css",
+    "static/js/main.d1184ec4.js"
   ]
 }

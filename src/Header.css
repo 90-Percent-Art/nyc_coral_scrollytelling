@@ -1,6 +1,21 @@
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header{
-    font-size: large;
+    font-size: xxx-large;
+    color: rgb(78, 114, 150);
+    background-color: white;
     width: 50%;
     margin: auto;
+    padding:0;
     text-align: center;
+    height: 500px;
+    width: 100%;
+}
+
+.header p{
+    font-size: smaller;
 }

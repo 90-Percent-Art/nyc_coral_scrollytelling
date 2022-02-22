@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Scrollama, Step } from "react-scrollama";
+import FloodMap from "./FloodMap";
 import "./ScrollBody.css";
 
 export default function ScrollBody() {
@@ -7,7 +8,7 @@ export default function ScrollBody() {
   const [data, setData] = useState(0);
   const [progress, setProgress] = useState(0);
 
-  const steps = [10, 20, 30];
+  const steps = [10, 20, 30,40,50];
 
   const onStepEnter = (e) => {
     const { data, entry, direction } = e;
@@ -26,13 +27,16 @@ export default function ScrollBody() {
 
   return (
     <div className={"graphicContainer"}>
+      <div className={"map"}>
+        <FloodMap />
+      </div>
       <div className={"scroller"}>
         <Scrollama
           onStepEnter={onStepEnter}
           onStepExit={onStepExit}
           progress
           onStepProgress={onStepProgress}
-          offset="300px"
+          offset="400px"
           debug
         >
           {steps.map((value) => {
@@ -53,9 +57,6 @@ export default function ScrollBody() {
             );
           })}
         </Scrollama>
-      </div>
-      <div className={"graphic"}>
-        <p>{data}</p>
       </div>
     </div>
   );

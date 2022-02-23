@@ -8,21 +8,12 @@ import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker'; //
 // from https://stackoverflow.com/questions/65434964/mapbox-blank-map-react-map-gl-reactjs
 mapboxgl.workerClass = MapboxWorker;
 
-export default function FloodMap() {
+export default function FloodMap({mapState, onViewStateChange}) {
+
+    console.log(mapState)
+    
     const mapboxToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
     const mapStyle = "mapbox://styles/jfoss117/ckzr8kmjs002314lelqt0w83j";
-
-    const initialViewState = {  
-        longitude: -74.6,
-        latitude: 40.7,
-        zoom: 10,
-        maxZoom: 16,
-        pitch: 0,
-        bearing: 0,
-        maxBounds: [
-            [-74.8, 40], // Southwest coordinates
-            [-73.2, 41] // Northeast coordinates
-        ]}
 
     const handleViewStateChange = ({viewState}) => {
         if (viewState.longitude < -74.27) {
@@ -32,7 +23,7 @@ export default function FloodMap() {
             viewState.longitude = -73.6;
         }
         if (viewState.latitude > 40.85) {
-            viewState.latitude = 40.85;
+            viewState.latitude = 40.85; 
         }
         if (viewState.latitude < 40.48) {
             viewState.latitude = 40.48;
@@ -40,13 +31,15 @@ export default function FloodMap() {
         if (viewState.zoom < 10) {
             viewState.zoom = 10;
         }
-        // update mapbox
+        // update the parent component 
+        onViewStateChange(viewState);
+        // update mapbox 
         return viewState;
     }    
 
     return (
       <DeckGL
-        initialViewState={initialViewState}
+        initialViewState={mapState.viewState}
         controller={{ doubleClickZoom: true, scrollZoom: false }}
         onViewStateChange={handleViewStateChange}
       >
@@ -55,7 +48,7 @@ export default function FloodMap() {
           mapboxAccessToken={mapboxToken}
           mapStyle={mapStyle}
           preventStyleDiffing={true}
-          maxBounds={initialViewState.maxBounds}
+          maxBounds={mapState.viewState.maxBounds}
         />
       </DeckGL>
     );

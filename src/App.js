@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import ScrollBody from "./ScrollBody";
+import ScrollManager from "./ScrollManager";
+import steps from "./steps"; // the data for each step in the scrolly story.
 import "./App.css";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     return (
       <div className="main">
         <Header />
-        <ScrollBody />
+        <ScrollManager steps = {steps}/>
         <Footer />
       </div>
     );

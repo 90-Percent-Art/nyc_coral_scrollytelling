@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/nyc_coral_scrollytelling/static/css/main.4538d221.css",
+    "main.css": "/nyc_coral_scrollytelling/static/css/main.9a32655a.css",
     "main.js": "/nyc_coral_scrollytelling/static/js/main.542b7e60.js",
     "static/js/mapbox-gl-csp-worker.f008c570.worker.js": "/nyc_coral_scrollytelling/static/js/mapbox-gl-csp-worker.f008c570.worker.js",
     "index.html": "/nyc_coral_scrollytelling/index.html",
-    "main.4538d221.css.map": "/nyc_coral_scrollytelling/static/css/main.4538d221.css.map",
+    "main.9a32655a.css.map": "/nyc_coral_scrollytelling/static/css/main.9a32655a.css.map",
     "main.542b7e60.js.map": "/nyc_coral_scrollytelling/static/js/main.542b7e60.js.map"
   },
   "entrypoints": [
-    "static/css/main.4538d221.css",
+    "static/css/main.9a32655a.css",
     "static/js/main.542b7e60.js"
   ]
 }

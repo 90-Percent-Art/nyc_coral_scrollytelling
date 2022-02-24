@@ -35,15 +35,6 @@ export default function FloodMap({mapState, onViewStateChange}) {
       getData("data/final_data_points_250.geojson", setDotData);
     }, []);
 
-
-    // useEffect(() => {
-    //   json("./data/sealevel2020_500.geojson")
-    //   .then((data) => {
-    //     console.log(data);
-    //     setFloodData(data.features)})
-    //   .catch(err => console.log("here is err ", err));
-    // }, []);    
-
     const mapboxToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
     const mapStyle = "mapbox://styles/jfoss117/ckzr8kmjs002314lelqt0w83j";
 
@@ -104,17 +95,27 @@ export default function FloodMap({mapState, onViewStateChange}) {
         getRadius: 0.7,
         getFillColor: (d) => {
           if (mapState.overLayState.dotsVisible) {
-            return [0, 0, 20, 80];
+            if (
+              mapState.overLayState.highlightFloodedDots &&
+              d.properties.in_2020_500
+            ) {
+              return [200, 0, 0, 80];
+            } else {
+              return [0, 0, 20, 80];
+            }
           } else {
             return [0, 0, 20, 0];
           }
         },
         updateTriggers: {
-          getFillColor: [mapState.overLayState.dotsVisible],
+          getFillColor: [
+            mapState.overLayState.dotsVisible,
+            mapState.overLayState.highlightFloodedDots,
+          ],
         },
-        transitions:{
-          getFillColor: 300
-        }
+        transitions: {
+          getFillColor: 300,
+        },
       }),
     ];
 

@@ -13,18 +13,21 @@ let defaultViewState = {
     ]
 }
 
+let defaultOverlayState = {
+    dotsVisible: false, 
+    floodVisible: false,
+    highlightFloodedDots: false,
+}
+
 let steps = [
   {
     id: 0,
     text: {
       header: "This is New York City.",
     },
-    mapState:{
-        viewState: defaultViewState,
-        overLayState: {
-            dotsVisible: false,
-            floodVisible: false,
-        }
+    mapState: {
+      viewState: defaultViewState,
+      overLayState: defaultOverlayState,
     },
   },
   {
@@ -33,41 +36,46 @@ let steps = [
       header: "And this is all of us.",
       body: "Based on the 2019 ACS Cenus Data about where we all live",
     },
-    mapState:{
-        viewState: defaultViewState,
-        overLayState: {
-            dotsVisible: true,
-            floodVisible: false,
-        }
-    }
+    mapState: {
+      viewState: defaultViewState,
+      overLayState: { ...defaultOverlayState, dotsVisible: true },
+    },
   },
   {
     id: 2,
     text: {
       header: "New York might not always look like this...",
     },
-    mapState:{
-        viewState: defaultViewState,
-        overLayState: {
-            dotsVisible: false,
-            floodVisible: false
-        }
+    mapState: {
+      viewState: defaultViewState,
+      overLayState: defaultOverlayState,
     },
   },
   {
     id: 3,
     text: {
       header: "In the future it might look like this...",
-      body: "This is the FEMA 2020s projected 500-year flood map. A flood like this is expected to happen with a probability of 0.2% every year."
+      body: "This is the FEMA 2020s projected 500-year flood map. A flood like this is expected to happen with a probability of 0.2% every year.",
     },
-    mapState:{
-        viewState: defaultViewState,
-        overLayState: {
-            dotsVisible: false,
-            floodVisible: true
-        }
-    }
-  }
+    mapState: {
+      viewState: defaultViewState,
+      overLayState: { ...defaultOverlayState, floodVisible: true },
+    },
+  },
+  {
+    id: 4,
+    text: {
+      header: "And many of us live in areas that may be affected.",
+    },
+    mapState: {
+      viewState: defaultViewState,
+      overLayState: {...defaultOverlayState,
+        dotsVisible: true,
+        floodVisible: true,
+        highlightFloodedDots: true,
+      },
+    },
+  },
 ];
 
 export default steps;

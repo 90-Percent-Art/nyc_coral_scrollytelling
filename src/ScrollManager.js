@@ -17,7 +17,7 @@ export default function ScrollManager({steps}) {
     <div className={"mapScrollerContainer"}>
       <div className={"map"}>
         <FloodMap
-          mapState={mapState}
+          mapState={{...mapState}}
           onViewStateChange={(viewState) =>
             setmapState({ ...mapState, viewState })
           }

@@ -1,9 +1,9 @@
 // This contains the data for each step in the scrolly story. 
 
 let defaultViewState = {
-    longitude: -74.6,
-    latitude: 40.7,
-    zoom: 10,
+    latitude: 40.65899253534682, 
+    longitude: -73.99568511962869,
+    zoom: 10.8,
     maxZoom: 16,
     pitch: 0,
     bearing: 0,
@@ -34,7 +34,7 @@ let steps = [
       body: "Based on the 2019 ACS Cenus Data about where we all live",
     },
     mapState:{
-        viewState: {...defaultViewState, zoom: 12, latitude: 40.65899253534682, longitude: -73.99568511962869},
+        viewState: defaultViewState,
         overLayState: {
             dotsVisible: true,
             floodVisible: false,
@@ -49,7 +49,7 @@ let steps = [
     mapState:{
         viewState: defaultViewState,
         overLayState: {
-            dotsVisible: true,
+            dotsVisible: false,
             floodVisible: false
         }
     },
@@ -63,11 +63,11 @@ let steps = [
     mapState:{
         viewState: defaultViewState,
         overLayState: {
-            dotsVisible: true,
+            dotsVisible: false,
             floodVisible: true
         }
     }
-}
+  }
 ];
 
 export default steps;
